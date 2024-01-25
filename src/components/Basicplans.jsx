@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RightIcon } from './Icon';
 
 const Basicplans = () => {
@@ -8,9 +8,7 @@ const Basicplans = () => {
     { plan: "Standard", price: "$4.20", pricePremium: "$8.80" },
     { plan: "Suprem", price: "$7.00", pricePremium: "$12.80" },
   ]
-  function Toggel() {
-    setToggel(!toggel)
-  }
+
   const [first, setfirst] = useState("tab1")
   function tabchange(tabs) {
     setfirst(tabs)
@@ -21,9 +19,9 @@ const Basicplans = () => {
         <p className='text-black font-["poppins"] text-[16px] font-normal text-center leading-[25px] mt-4 sm:mt-[38px]'>Choose the package that suits you</p>
         <div className='flex items-center justify-center sm:my-[40px] my-[30px] md:my-[57px]   gap-0 flex-row'>
           <p className='text-black font-["poppins"] text-[25px] font-normal text-center leading-[25px]'>Monthly</p>
-          <label onClick={() => Toggel()} class="relative inline-flex items-center cursor-pointer sm:ml-8 sm:mr-7 mr-2 ml-2">
+          <label id='toggle_id' onClick={() => toggel()} class="relative inline-flex items-center cursor-pointer sm:ml-8 sm:mr-7 mr-2 ml-2">
             <input type="checkbox" value="" class="sr-only peer" />
-            <div class="group peer ring-0 bg-[#B00000]   rounded-full outline-none duration-300 after:duration-300 sm:w-[93px] sm:h-[50px] w-[70px] h-[35px] shadow-md peer-focus:outline-none   after:rounded-full after:absolute after:bg-gray-50 after:outline-none after:sm:h-[30px] after:h-[20px] after:w-[20px] after:sm:w-[30px] after:sm:top-[9px] after:top-[7px] after:sm:left-[9px] after:left-[8px] after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:sm:translate-x-12 peer-checked:after:translate-x-8 peer-hover:after:scale-95 peer-checked:after:rotate-0">
+            <div class={` peer-checked:bg-slate-800 peer-checked:after:bg-orange-700 group peer ring-0 rounded-full outline-none duration-300 after:duration-300 sm:w-[93px] sm:h-[50px] w-[70px] h-[35px] shadow-md peer-focus:outline-none   after:rounded-full after:absolute after:bg-gray-50 after:outline-none after:sm:h-[30px] after:h-[20px] after:w-[20px] after:sm:w-[30px] after:sm:top-[9px] after:top-[7px] after:sm:left-[9px] after:left-[8px] after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:sm:translate-x-12 peer-checked:after:translate-x-8 peer-hover:after:scale-95 peer-checked:after:rotate-0 bg-red-500 `}>
             </div>
           </label>
           <p className='text-black font-["poppins"] text-[25px] font-normal text-center leading-[25px] relative flex'>Yearly <span className='text-black absolute font-["poppins"] text-[10px] font-medium text-center leading-[9px] text-nowrap bg-[#FFE87A] p-2 rounded-lg  hidden sm:block ml-[90px]'>20%  discount</span></p>

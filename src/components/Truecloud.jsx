@@ -11,9 +11,9 @@ const Truecloud = () => {
         <>
             <div className=' max-w-[1280px] mx-auto px-3 container overflow-hidden' id='about'>
                 <div className='flex flex-wrap flex-row -mx-3'>
-                    <div className='w-full lg:w-1/2 px-3' data-aos="fade-right">
+                    <div className='w-full lg:w-1/2 px-3 pt-5 lg:pt-0' data-aos="fade-right">
                         <h2 className=" text-zinc-900 sm:text-[35px] text-[30px] md:text-[40px] lg:text-5xl font-extrabold font-['Inter'] leading-[40px] sm:leading-[64px]">True Cloud Web  Hosting</h2>
-                        <p className="lg:max-w-[573px] text-zinc-900 text-[15px] sm:text-lg font-normal font-['Inter'] leading-[30px] sm:leading-loose pt-7">True Cloud Web Hosting All of the hosting packages we offer are deployed instantly on our SSD powered cloud. We don’t use dedicated servers that operate on single pieces of hardware. Our entire infrastructure is built to be reliable, secure, and scalable.</p>
+                        <p className="lg:max-w-[573px] text-zinc-900 text-[15px] sm:text-lg font-normal font-['Inter'] leading-[30px] sm:leading-loose pt-1 md:pt-6">True Cloud Web Hosting All of the hosting packages we offer are deployed instantly on our SSD powered cloud. We don’t use dedicated servers that operate on single pieces of hardware. Our entire infrastructure is built to be reliable, secure, and scalable.</p>
 
                     </div>
                     <div className='w-full lg:w-1/2 px-3' data-aos="fade-left">

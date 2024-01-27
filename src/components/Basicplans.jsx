@@ -3,15 +3,21 @@ import { RightIcon } from './Icon';
 
 const Basicplans = () => {
   const [toggel, setToggel] = useState(false)
+  function change() {
+    setToggel(!toggel)
+  }
   const Items = [
-    { plan: "Starter", price: "$2.80", pricePremium: "$5.80" },
-    { plan: "Standard", price: "$4.20", pricePremium: "$8.80" },
-    { plan: "Suprem", price: "$7.00", pricePremium: "$12.80" },
+    { plan: "Starter", price: "$2.80", pricePremium: "$5.80", priceyear: "$48.0",  yearpremium: "$60.0" },
+    { plan: "Standard", price: "$4.20", pricePremium: "$8.80", priceyear: "$60.0", yearpremium: "$65.0" },
+    { plan: "Suprem", price: "$7.00", pricePremium: "$12.80", priceyear: "$65.0",  yearpremium: "$69.0" },
   ]
 
   const [first, setfirst] = useState("tab1")
   function tabchange(tabs) {
     setfirst(tabs)
+
+
+
   } return (
     <div className='container max-w-[1120px] overflow-hidden mx-auto px-3 flex flex-col mt-2 sm:mt-6 md:mt-10 lg:mt-40px]' id='services' data-aos="zoom-out">
       <div className='flex flex-col max-w-[856px] mx-auto'>
@@ -19,12 +25,13 @@ const Basicplans = () => {
         <p className='text-black font-["poppins"] text-[16px] font-normal text-center leading-[25px] mt-4 sm:mt-[38px]'>Choose the package that suits you</p>
         <div className='flex items-center justify-center sm:my-[40px] my-[30px] md:my-[57px]   gap-0 flex-row'>
           <p className='text-black font-["poppins"] text-[25px] font-normal text-center leading-[25px]'>Monthly</p>
-          <label id='toggle_id' onClick={() => toggel()} class="relative inline-flex items-center cursor-pointer sm:ml-8 sm:mr-7 mr-2 ml-2">
-            <input type="checkbox" value="" class="sr-only peer" />
-            <div class={` peer-checked:bg-slate-800 peer-checked:after:bg-orange-700 group peer ring-0 rounded-full outline-none duration-300 after:duration-300 sm:w-[93px] sm:h-[50px] w-[70px] h-[35px] shadow-md peer-focus:outline-none   after:rounded-full after:absolute after:bg-gray-50 after:outline-none after:sm:h-[30px] after:h-[20px] after:w-[20px] after:sm:w-[30px] after:sm:top-[9px] after:top-[7px] after:sm:left-[9px] after:left-[8px] after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:sm:translate-x-12 peer-checked:after:translate-x-8 peer-hover:after:scale-95 peer-checked:after:rotate-0 bg-[#B00000] `}>
+          <label id='toggle_id'
+            className="relative inline-flex items-center cursor-pointer sm:ml-8 sm:mr-7 mr-2 ml-2">
+            <input type="checkbox" value="" className="sr-only peer" />
+            <div onClick={change} className={` peer-checked:bg-slate-800 peer-checked:after:bg-orange-700 group peer ring-0 rounded-full outline-none duration-300 after:duration-300 sm:w-[93px] sm:h-[50px] w-[70px] h-[35px] shadow-md peer-focus:outline-none   after:rounded-full after:absolute after:bg-gray-50 after:outline-none after:sm:h-[30px] after:h-[20px] after:w-[20px] after:sm:w-[30px] after:sm:top-[9px] after:top-[7px] after:sm:left-[9px] after:left-[8px] after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:sm:translate-x-12 peer-checked:after:translate-x-8 peer-hover:after:scale-95 peer-checked:after:rotate-0 bg-[#B00000]  `}>
             </div>
           </label>
-          <p className='text-black font-["poppins"] text-[25px] font-normal text-center leading-[25px] relative flex'>Yearly <span className='text-black absolute font-["poppins"] text-[10px] font-medium text-center leading-[9px] text-nowrap bg-[#FFE87A] p-2 rounded-lg  hidden sm:block ml-[90px]'>20%  discount</span></p>
+          <p className='text-black font-["poppins"] text-[25px] font-normal text-center leading-[25px] relative flex'>Yearly <span className='text-black absolute font-["poppins"] text-[10px] font-medium text-center leading-[9px] text-nowrap bg-[#FFE87A] p-2 rounded-lg mt-[40px] sm:mt-0  sm:ml-[90px]'>20%  discount</span></p>
         </div>
         <div className='flex items-center w-full relative after:absolute after:bg-[#C4C4C4] after:w-full after:h-[2px] sm:after:h-1 after:-bottom-[6px] after:left-0 pt-[14px]'>
           <div className={`${first === "tab1" && "relative after:absolute after:-bottom-[6px] after:z-20 transition duration-300 after:w-full after:h-[2px] sm:after:h-1  after:bg-[#B00000] after:left-0"} w-1/2 flex justify-center`}><button onClick={() => tabchange("tab1")} className={` font-["poppins"] text-xl xs:text-2xl sm:text-[30px] text-black font-semibold !leading-10`}>Basic</button></div>
@@ -38,11 +45,13 @@ const Basicplans = () => {
               <div key={index} className=' bg-white shadow-[0_0_4px_0_rgba(0,0,0,0.25)] border-[1.5px] border-[#C4C4C4] rounded-2xl lg:max-w-[299px] w-full h-auto'>
                 <div className='p-[34px]'>
                   {
-                    toggel ? (<div><h2 className=' text-[28px] font-["poppins"] font-semibold text-black leading-6'>{items.price}</h2></div>) : (<div><h2 className=' text-[28px] font-["poppins"] font-semibold text-black leading-6'>{items.plan}</h2></div>)
+                    toggel ? (<div><h2 className=' text-[28px] font-["poppins"] font-semibold text-black leading-6'>{items.plan}</h2></div>) : (<div><h2 className=' text-[28px] font-["poppins"] font-semibold text-black leading-6'>{items.plan}</h2></div>)
                   }
                   <p className=' font-["poppins"] text-xs font-normal text-black mt-3 leading-[18px]'>with all your customers via all conversation channels in one central dashboard.</p>
-                  <p className=' text-black text-4xl sm:text-[42px] font-semibold font-["poppins"] leading-8 mt-5 md:mt-7 mb-2'>{items.price}</p>
-                  <span className='text-black text-sm font-["poppins"] font-light '>Per month</span>
+                  {
+                    toggel ? (<p className=' text-black text-4xl sm:text-[42px] font-semibold font-["poppins"] leading-8 mt-5 md:mt-7 mb-2'>{items.priceyear}</p>) : (<p className=' text-black text-4xl sm:text-[42px] font-semibold font-["poppins"] leading-8 mt-5 md:mt-7 mb-2'>{first ? (items.price) : (items.pricePremium)}</p>)
+                  }
+                  <span className='text-black text-sm font-["poppins"] font-light '>{toggel ? "per year" : " per month"}</span>
                   <button className=' text-black font-semibold font-["poppins"] text-sm text-center w-full bg-transparent border-[2px] border-black rounded-xl leading-8 py-[9px] my-6 sm:my-8 md:my-[35px] hover:text-[#fff] hover:shadow-[0px_0px_64px_0px_#b000004d] duration-300 hover:border-transparent hover:bg-[#B00000]'>Choose this Plan</button>
                   <div className='flex flex-col sm:flex-row lg:flex-col justify-between sm:justify-around lg:justify-start'>
                     <div>
@@ -73,8 +82,10 @@ const Basicplans = () => {
                 <div className='p-[34px]'>
                   <h2 className=' text-[28px] font-["poppins"] font-semibold text-black leading-6'>{items.plan}</h2>
                   <p className=' font-["poppins"] text-xs font-normal text-black mt-3 leading-[18px]'>with all your customers via all conversation channels in one central dashboard.</p>
-                  <p className=' text-black text-4xl sm:text-[42px] font-semibold font-["poppins"] leading-8 mt-5 md:mt-7 mb-2'>{items.pricePremium}</p>
-                  <span className='text-black text-sm font-["poppins"] font-light'>Per month</span>
+                  {
+                    toggel ? (<p className=' text-black text-4xl sm:text-[42px] font-semibold font-["poppins"] leading-8 mt-5 md:mt-7 mb-2'>{first ? (items.priceyear) : (items.yearpremium)}</p>) : (<p className=' text-black text-4xl sm:text-[42px] font-semibold font-["poppins"] leading-8 mt-5 md:mt-7 mb-2'>{items.pricePremium}</p>)
+                  }
+                  <span className='text-black text-sm font-["poppins"] font-light '>{toggel ? "per year" : " per month"}</span>
                   <button className=' text-black font-semibold font-["poppins"] text-sm text-center w-full bg-transparent border-[2px] border-black rounded-xl leading-8 py-[9px] my-6 sm:my-8 md:my-[35px]'>Choose this Plan</button>
                   <div className='flex flex-col sm:flex-row lg:flex-col justify-between sm:justify-around lg:justify-start'>
                     <div>
